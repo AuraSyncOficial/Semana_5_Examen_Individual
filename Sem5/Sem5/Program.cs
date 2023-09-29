@@ -110,7 +110,30 @@ namespace Sem5
                             Console.WriteLine("Selección no válida.");
                         }
                         break;
-
+                    case 2:
+                        carrito.MostrarContenido();
+                        break;
+                    case 3:
+                        Console.WriteLine("Compra finalizada. Resumen:");
+                        carrito.MostrarContenido();
+                        Console.WriteLine("¿Deseas crear un nuevo carrito de compras? (S/N)");
+                        string respuestaCompra = Console.ReadLine();
+                        if (respuestaCompra.Equals("S", StringComparison.OrdinalIgnoreCase))
+                        {
+                            carrito = new CarritoCompras();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Gracias por su compra. ¡Vuelva pronto!");
+                            Environment.Exit(0);
+                        }
+                        break;
+                    case 4:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Opción no válida. Por favor, selecciona una opción disponible.");
+                        break;
                 }
             }
         }
